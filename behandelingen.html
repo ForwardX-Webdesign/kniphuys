@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behandelingen & Prijzen – Kapsalon Het Kniphuys</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav">
+  <div class="nav__wrap">
+    <a class="nav__logo" href="index.html">
+      <img src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/logo-kniphuys-gold2.png" alt="Kapsalon Het Kniphuys" />
+    </a>
+    <nav class="nav__links">
+      <a href="behandelingen.html" style="color:var(--primary)">Behandelingen &amp; Prijzen</a>
+      <a href="index.html#over-ons">Over Ons</a>
+      <a href="index.html#team">Team</a>
+      <a href="galerij.html">Galerij</a>
+      <a href="merken.html">Merken</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <a class="nav__phone" href="tel:0299675360">
+        <svg class="nav__phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l1.46-1.46a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        <span class="nav__phone-text">0299 675 360</span>
+      </a>
+      <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak</a>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav__drawer" id="nav-drawer">
+  <nav class="nav__drawer-links">
+    <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
+    <a href="index.html#over-ons">Over Ons</a>
+    <a href="index.html#team">Team</a>
+    <a href="galerij.html">Galerij</a>
+    <a href="merken.html">Merken</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak Maken</a>
+</div>
+
+<!-- ═══ PAGE HERO ═══ -->
+<div class="pag-hero">
+  <div class="container">
+    <span class="section-label">Kapsalon Het Kniphuys</span>
+    <h1 class="pag-hero__h1">Behandelingen &amp; Prijzen</h1>
+    <p class="pag-hero__sub">Kies een categorie om snel het juiste tarief te vinden.</p>
+  </div>
+</div>
+
+<!-- ═══ FILTER BAR ═══ -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-bar__inner">
+      <button class="filter-btn active" onclick="filter('all', this)">Alles</button>
+      <button class="filter-btn" onclick="filter('knippen', this)">Knippen</button>
+      <button class="filter-btn" onclick="filter('blowdry', this)">Blow Dry &amp; Styling</button>
+      <button class="filter-btn" onclick="filter('kleur', this)">Kleur &amp; Highlights</button>
+      <button class="filter-btn" onclick="filter('sisko', this)">SISKO Hairweaves</button>
+      <button class="filter-btn" onclick="filter('jeugd', this)">Jeugd</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PRICE CONTENT ═══ -->
+<main style="background:var(--white); padding-bottom: 80px;">
+  <div class="container">
+
+    <!-- KNIPPEN -->
+    <section class="price-section" data-cat="knippen" id="knippen">
+      <h2 class="price-section__heading">Knippen</h2>
+      <p class="price-section__intro">Inclusief wasmassage en modeldrogen, tenzij anders vermeld.</p>
+      <div class="price-list">
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Heer; wasmassage, knippen, styling</p>
+            <p class="price-row__desc">Heer; Wasmassage, knippen, styling</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 41,50</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Heer; Tondeuse</p>
+            <p class="price-row__desc">Het volledig scheren van het haar met de tondeuse</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 27,00</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame; knippen kort haar</p>
+            <p class="price-row__desc">Wasmassage, knippen, model drogen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 52,00</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: knippen half lang haar</p>
+            <p class="price-row__desc">Wasmassage, knippen, model drogen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 59,00</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Knippen lang haar</p>
+            <p class="price-row__desc">Wasmassage, knippen, model drogen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 64,50</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BLOW DRY & STYLING -->
+    <section class="price-section" data-cat="blowdry" id="blowdry">
+      <h2 class="price-section__heading">Blow Dry &amp; Styling</h2>
+      <p class="price-section__intro">Haar in model fohnen met borstel of stylingtool.</p>
+      <div class="price-list">
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Wenkbrauw shaping</p>
+            <p class="price-row__desc">Perfect in vorm en/of kleur; icm met een knip- of kleurbehandeling € 33,50</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 39,00</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Blow dry kort haar</p>
+            <p class="price-row__desc">Het in model fohnen met borstel/stylingtool</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 39,00</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Blow dry half lang haar</p>
+            <p class="price-row__desc">Het haar in model fohnen met een borstel / stylingtool</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 52,50</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Blow dry lang haar</p>
+            <p class="price-row__desc">Het in model fohnen met een borstel/stylingtool</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 65,50</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KLEUR & HIGHLIGHTS -->
+    <section class="price-section" data-cat="kleur" id="kleur">
+      <h2 class="price-section__heading">Kleur &amp; Highlights</h2>
+      <p class="price-section__intro">Vraag voor een persoonlijk advies bij een van onze kleurspecialisten.</p>
+      <div class="price-list">
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Cover My Hair kort</p>
+            <p class="price-row__desc">Uitgroei basiskleur kort haar; zonder knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Cover My Hair half lang haar</p>
+            <p class="price-row__desc">Uitgroei basiskleur half lang haar zonder knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Cover My Hair, lang haar</p>
+            <p class="price-row__desc">Uitgroei basiskleur zonder knippen lang haar</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Cover My Hair kort haar incl. knippen</p>
+            <p class="price-row__desc">Uitgroei basiskleur kort haar incl. knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Cover My Hair half lang haar incl. knippen</p>
+            <p class="price-row__desc">Uitgroei basiskleur half lang haar incl. knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Dame: Cover My Hair lang haar, incl. knippen</p>
+            <p class="price-row__desc">Uitgroei basiskleur lang haar incl. knippen/drogen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Highlight Your Hair / kort haar</p>
+            <p class="price-row__desc">Highlights kort haar zonder knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Highlight Your Hair touch up half lang zonder knippen</p>
+            <p class="price-row__desc">Uitgroei highlights halflang zonder knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Highlight Your Hair half lang haar</p>
+            <p class="price-row__desc">Gehele hoofd hightlights zonder knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Highlight Your Hair lang haar</p>
+            <p class="price-row__desc">Gehele hoofd highlights lang haar zonder knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Highlight Your Hair kort haar incl. knippen</p>
+            <p class="price-row__desc">Highlights kort haar, inclusief knippen/drogen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Highlight Your Hair touch up half lang incl. knippen</p>
+            <p class="price-row__desc">Uitgroei highlights half lang haar incl. knippen/drogen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Highlight Your Hair half lang haar incl. knippen</p>
+            <p class="price-row__desc">Hele hoofd highlights incl. knippen/drogen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Highlight Your Hair lang haar incl. knippen</p>
+            <p class="price-row__desc">Hele hoofd highlights incl. knippen/drogen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Cover &amp; Shine kort haar</p>
+            <p class="price-row__desc">Basiskleur icm highlights kort haar zonder knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Cover &amp; Shine half lang</p>
+            <p class="price-row__desc">Basiskleur icm highlights half lang haar zonder knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Cover &amp; Shine lang haar</p>
+            <p class="price-row__desc">Basiskleur icm highlights lang haar zonder knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Cover &amp; Shine kort haar incl. knippen</p>
+            <p class="price-row__desc">Basiskleur icm highlights kort haar en knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Cover &amp; Shine half lang haar incl. knippen</p>
+            <p class="price-row__desc">Basiskleur icm highlights half lang haar incl. knippen</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Cover &amp; Shine lang haar incl. knippen</p>
+            <p class="price-row__desc">Adviesgesprek SiSKO Naûtrai Hairweaves 30min.</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price price-row__price--request">Op aanvraag</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Adviesgesprek kleurbehandeling en model</p>
+            <p class="price-row__desc">Prijs wordt gereduceerd bij een behandeling v.a. eur90</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 22,00</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SISKO -->
+    <section class="price-section" data-cat="sisko" id="sisko" style="background:var(--beige-light); margin: 0 -40px; padding: 48px 40px; border-radius: 4px;">
+      <div style="display:flex; align-items:center; gap:20px; margin-bottom:8px;">
+        <img src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/02/logo-sisko-e1771257746907.png" alt="SISKO" style="height:40px; width:auto;" />
+        <h2 class="price-section__heading" style="margin:0">SISKO Hairweaves</h2>
+      </div>
+      <p class="price-section__intro">100% Remy Human Hair · Onzichtbare techniek · Gecertificeerde specialisten</p>
+      <div class="price-list">
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">SISKO Hairweave 1 kabeltje opnieuw plaatsen</p>
+            <p class="price-row__desc">1 weave kabeltje SISKO inzetten</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 87,50</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">SISKO Hairweave 2 kabeltjes opnieuw plaatsen</p>
+            <p class="price-row__desc">2 weave kabeltjes SISKO inzetten</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 117,00</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">SISKO 1 kabeltje incl. wasmassage + treatment</p>
+            <p class="price-row__desc">SISKO 1 kabeltje, wasmassage/treatment</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 119,50</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">SISKO 2 kabeltjes incl. wasmassage + treatment</p>
+            <p class="price-row__desc">SISKO 2 kabeltjes, wasmassage/treatment</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 149,00</span>
+        </div>
+
+      </div>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak SISKO</a>
+        <a class="btn btn--outline-dark" href="index.html#sisko" style="margin-left:12px;">Meer over SISKO</a>
+      </div>
+    </section>
+
+    <!-- JEUGD -->
+    <section class="price-section" data-cat="jeugd" id="jeugd">
+      <h2 class="price-section__heading">Jeugd</h2>
+      <p class="price-section__intro">Tarieven voor kinderen en jongeren.</p>
+      <div class="price-list">
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Jeugd 0–8 jaar</p>
+            <p class="price-row__desc">Knippen, styling</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 31,00</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Jeugd 9–12 jaar</p>
+            <p class="price-row__desc">Wasmassage, knippen, styling</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 32,50</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Jeugd 13–15 jaar</p>
+            <p class="price-row__desc">Wasmassage, knippen, styling</p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 36,00</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price-row__info">
+            <p class="price-row__name">Jeugd halflang/dik haar</p>
+            <p class="price-row__desc"></p>
+          </div>
+          <div class="price-row__dots"></div>
+          <span class="price-row__price">€ 45,00</span>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /container -->
+</main>
+
+<!-- ═══ CTA BALK ═══ -->
+<section style="background:var(--dark); padding:60px 0; text-align:center;">
+  <div class="container">
+    <h2 style="font-family:var(--font-heading); font-size:40px; color:var(--white); margin-bottom:12px;">Klaar voor jouw nieuwe look?</h2>
+    <p style="color:rgba(255,255,255,0.65); font-size:14px; margin-bottom:28px;">Plan eenvoudig een afspraak online of bel ons op 0299 675 360.</p>
+    <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak Maken</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__logo">
+        <img src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/logo-kniphuys-gold2.png" alt="Het Kniphuys" />
+      </div>
+      <nav class="footer__menu">
+        <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
+        <a href="index.html#over-ons">Over Ons</a>
+        <a href="index.html#team">Team</a>
+        <a href="galerij.html">Galerij</a>
+        <a href="merken.html">Merken</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <p class="footer__credit">Website door <a href="https://forwardx.nl" target="_blank">ForwardX</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function filter(cat, btn) {
+  // Update active button
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Show/hide sections
+  document.querySelectorAll('.price-section').forEach(sec => {
+    if (cat === 'all' || sec.dataset.cat === cat) {
+      sec.classList.remove('price-section--hidden');
+    } else {
+      sec.classList.add('price-section--hidden');
+    }
+  });
+
+  // Scroll to first visible section
+  if (cat !== 'all') {
+    const target = document.querySelector(`[data-cat="${cat}"]`);
+    if (target) {
+      setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+    }
+  }
+}
+
+const hamburger = document.getElementById('nav-hamburger');
+const drawer = document.getElementById('nav-drawer');
+hamburger.addEventListener('click', () => {
+  const open = drawer.classList.toggle('open');
+  hamburger.classList.toggle('active', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+</script>
+
+</body>
+</html>

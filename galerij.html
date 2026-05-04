@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerij – Kapsalon Het Kniphuys</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .galerij-page__hero {
+      padding: 140px 0 56px;
+      background: var(--dark);
+      text-align: center;
+    }
+    .galerij-page__hero .eyebrow { color: var(--beige-dark); }
+    .galerij-page__hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .galerij-page__hero p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Filter buttons */
+    .galerij-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      padding: 40px 24px 32px;
+      background: var(--beige-light);
+      border-bottom: 1px solid var(--beige-medium);
+    }
+    .galerij-filter {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border: 1.5px solid var(--beige-dark);
+      border-radius: 2px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .galerij-filter:hover { border-color: var(--primary); color: var(--primary); }
+    .galerij-filter.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--white);
+    }
+
+    /* Grid */
+    .galerij-page__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      padding: 5px;
+      background: var(--beige-light);
+    }
+    .g-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--beige-medium);
+      aspect-ratio: 1 / 1;
+      transition: opacity .4s, transform .4s;
+    }
+    .g-item.hidden {
+      display: none;
+    }
+    .g-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .g-item:hover img { transform: scale(1.05); }
+
+    /* Video item */
+    .g-item--video video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .g-item--video::after {
+      content: '▶';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: rgba(255,255,255,0.9);
+      background: rgba(20,10,2,0.35);
+      pointer-events: none;
+    }
+
+    /* Wide / tall variants */
+    .g-item--wide { grid-column: span 2; aspect-ratio: 2 / 1; }
+    .g-item--tall { grid-row: span 2; aspect-ratio: unset; }
+    .g-item--tall img { height: 100%; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(10,5,0,0.93);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s;
+      padding: 24px;
+    }
+    .lightbox.active { opacity: 1; pointer-events: all; }
+    .lightbox img {
+      max-width: 90vw; max-height: 88vh;
+      object-fit: contain;
+      border-radius: 2px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+    }
+    .lightbox__close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; cursor: pointer;
+      color: rgba(255,255,255,0.7); font-size: 28px; line-height: 1;
+      transition: color .2s;
+    }
+    .lightbox__close:hover { color: var(--white); }
+    .lightbox__prev, .lightbox__next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.1); border: none; cursor: pointer;
+      color: var(--white); font-size: 28px; width: 52px; height: 52px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .lightbox__prev:hover, .lightbox__next:hover { background: rgba(255,255,255,0.25); }
+    .lightbox__prev { left: 16px; }
+    .lightbox__next { right: 16px; }
+
+    @media (max-width: 767px) {
+      .galerij-page__grid { grid-template-columns: repeat(2, 1fr); }
+      .g-item--wide { grid-column: span 1; aspect-ratio: 1 / 1; }
+      .g-item--tall { grid-row: span 1; aspect-ratio: 1 / 1; }
+      .g-item--tall img { height: 100%; }
+    }
+    @media (max-width: 480px) {
+      .galerij-page__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav">
+  <div class="nav__wrap">
+    <a class="nav__logo" href="index.html">
+      <img src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/logo-kniphuys-gold2.png" alt="Kapsalon Het Kniphuys" />
+    </a>
+    <nav class="nav__links">
+      <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
+      <a href="index.html#over-ons">Over Ons</a>
+      <a href="index.html#team">Team</a>
+      <a href="galerij.html" style="color:var(--primary)">Galerij</a>
+      <a href="merken.html">Merken</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <a class="nav__phone" href="tel:0299675360">
+        <svg class="nav__phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l1.46-1.46a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        <span class="nav__phone-text">0299 675 360</span>
+      </a>
+      <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak</a>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav__drawer" id="nav-drawer">
+  <nav class="nav__drawer-links">
+    <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
+    <a href="index.html#over-ons" onclick="closeDrawer()">Over Ons</a>
+    <a href="index.html#team" onclick="closeDrawer()">Team</a>
+    <a href="galerij.html">Galerij</a>
+    <a href="merken.html">Merken</a>
+    <a href="index.html#contact" onclick="closeDrawer()">Contact</a>
+  </nav>
+  <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak Maken</a>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<section class="galerij-page__hero">
+  <div class="container">
+    <p class="eyebrow">Ons werk</p>
+    <h1>Galerij</h1>
+    <p>Een kijkje in de salon en ons werk. Klik op een foto voor een grotere weergave.</p>
+  </div>
+</section>
+
+<!-- ═══ FILTER BUTTONS ═══ -->
+<div class="galerij-filters">
+  <button class="galerij-filter active" data-filter="alles">Alles</button>
+  <button class="galerij-filter" data-filter="knippen">Knippen &amp; Styling</button>
+  <button class="galerij-filter" data-filter="kleur">Kleur &amp; Highlights</button>
+  <button class="galerij-filter" data-filter="bruid">Bruidskapsels</button>
+  <button class="galerij-filter" data-filter="sisko">SISKO Hairweaves</button>
+  <button class="galerij-filter" data-filter="salon">Salon &amp; Team</button>
+</div>
+
+<!-- ═══ FOTOGRID ═══ -->
+<div class="galerij-page__grid" id="gallery">
+
+  <!-- Knippen & Styling -->
+  <div class="g-item" data-cat="knippen" onclick="openLight(this)">
+    <img src="470187484_18348541207131834_9137440675770390184_n.webp" alt="Blond golvend haar" loading="lazy" />
+  </div>
+  <div class="g-item g-item--tall" data-cat="knippen" onclick="openLight(this)">
+    <img src="474956368_18354335260131834_7730384778177592858_n.webp" alt="Caramel highlights" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="knippen" onclick="openLight(this)">
+    <img src="544793699_18381801898131834_8115453649566529108_n.webp" alt="Blond steil haar – salon" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="knippen" onclick="openLight(this)">
+    <img src="585187004_18392962465131834_5307665470792632149_n.webp" alt="Golvend lichtbruin haar" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="knippen" onclick="openLight(this)">
+    <img src="499580266_18367884391131834_5986081825765366486_n.webp" alt="Roodbruin bob" loading="lazy" />
+  </div>
+
+  <!-- Kleur & Highlights -->
+  <div class="g-item g-item--wide" data-cat="kleur" onclick="openLight(this)">
+    <img src="515399493_18373117762131834_2632098146746536498_n.webp" alt="Kleurbehandeling in salon" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="kleur" onclick="openLight(this)">
+    <img src="552425269_18383220181131834_8580699995693470830_n.webp" alt="Zilvergrijs – salon" loading="lazy" />
+  </div>
+
+  <!-- Bruid -->
+  <div class="g-item g-item--tall" data-cat="bruid" onclick="openLight(this)">
+    <img src="579688319_18389678812131834_238724124243003822_n.webp" alt="Bruidskapsel – bruid met boeket" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="bruid" onclick="openLight(this)">
+    <img src="579629581_18389678815131834_2963960448238562139_n.webp" alt="Bruidsstyling – zwart-wit" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="bruid" onclick="openLight(this)">
+    <img src="574938368_18389678824131834_3789684413734264131_n.webp" alt="Bruid wordt opgemaakt in salon" loading="lazy" />
+  </div>
+
+  <!-- SISKO -->
+  <div class="g-item g-item--tall" data-cat="sisko" onclick="openLight(this)">
+    <img src="ireneschouten1_1742545866_3593057608081315026_50423180_1.jpg" alt="Irene Schouten – SISKO Hairweaves" loading="lazy" />
+  </div>
+  <div class="g-item g-item--video" data-cat="sisko">
+    <video src="siskohairweaves_1777828811_3889029875015725635_21672114872_1.mp4" muted loop playsinline preload="metadata"></video>
+  </div>
+
+  <!-- Salon & Team -->
+  <div class="g-item" data-cat="salon" onclick="openLight(this)">
+    <img src="Hero-optie.jpg" alt="Het Kniphuys team" loading="lazy" />
+  </div>
+  <div class="g-item g-item--wide" data-cat="salon" onclick="openLight(this)">
+    <img src="susan.webp" alt="Susan &amp; Sanne – eigenaressen" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="salon" onclick="openLight(this)">
+    <img src="609719948_18110539555722873_1833181370887761186_n.webp" alt="Susan &amp; Sanne" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="salon" onclick="openLight(this)">
+    <img src="sanne.png" alt="Sanne – Stylist" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="salon" onclick="openLight(this)">
+    <img src="sjoukje.webp" alt="Sjoukje – Junior Stylist" loading="lazy" />
+  </div>
+  <div class="g-item" data-cat="salon" onclick="openLight(this)">
+    <img src="senna.png" alt="Senna – Stylist" loading="lazy" />
+  </div>
+
+</div>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLight()">
+  <button class="lightbox__close" onclick="closeLight()">✕</button>
+  <button class="lightbox__prev" onclick="lightStep(-1)">&#8249;</button>
+  <img id="lightbox-img" src="" alt="" />
+  <button class="lightbox__next" onclick="lightStep(1)">&#8250;</button>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer__body">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__col--brand">
+          <img class="footer__brand-logo" src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/logo-kniphuys-gold2.png" alt="Kapsalon Het Kniphuys" />
+          <p class="footer__desc">Jouw kapper in De Rijp. Persoonlijke aandacht, vakmanschap en een warme sfeer – van klassieke knipbeurt tot geavanceerde hairweaves.</p>
+          <div class="footer__social">
+            <a class="footer__social-link" href="https://facebook.com/hetkniphuys" target="_blank" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a class="footer__social-link" href="https://instagram.com/hetkniphuys" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-heading">Menu</h3>
+          <nav class="footer__nav">
+            <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
+            <a href="index.html#over-ons">Over Ons</a>
+            <a href="index.html#team">Team</a>
+            <a href="galerij.html">Galerij</a>
+            <a href="merken.html">Merken</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="footer__col footer__col--partner">
+          <img class="footer__partner-logo" src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/anko-logo.png" alt="ANKO Sinds 1891" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="footer__anko-fallback" style="display:none">
+            <span class="footer__anko-crown">♛</span>
+            <span class="footer__anko-name">ANKO</span>
+            <span class="footer__anko-since">SINDS 1891</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <p><a href="https://forwardx.nl" target="_blank">Website laten maken?</a> ForwardX</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Filter
+const filterBtns = document.querySelectorAll('.galerij-filter');
+const items = document.querySelectorAll('.g-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    items.forEach(item => {
+      const match = f === 'alles' || item.dataset.cat === f;
+      item.classList.toggle('hidden', !match);
+    });
+    buildLightIndex();
+  });
+});
+
+// Video hover play
+document.querySelectorAll('.g-item--video video').forEach(v => {
+  v.closest('.g-item').addEventListener('mouseenter', () => v.play());
+  v.closest('.g-item').addEventListener('mouseleave', () => v.pause());
+});
+
+// Lightbox
+let lightItems = [];
+let lightCurrent = 0;
+const lightbox = document.getElementById('lightbox');
+const lightImg = document.getElementById('lightbox-img');
+
+function buildLightIndex() {
+  lightItems = Array.from(document.querySelectorAll('.g-item:not(.hidden):not(.g-item--video) img'));
+}
+buildLightIndex();
+
+function openLight(el) {
+  const img = el.querySelector('img');
+  if (!img) return;
+  buildLightIndex();
+  lightCurrent = lightItems.indexOf(img);
+  lightImg.src = img.src;
+  lightImg.alt = img.alt;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLight() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+function lightStep(dir) {
+  if (!lightItems.length) return;
+  lightCurrent = (lightCurrent + dir + lightItems.length) % lightItems.length;
+  lightImg.src = lightItems[lightCurrent].src;
+  lightImg.alt = lightItems[lightCurrent].alt;
+}
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLight();
+  if (e.key === 'ArrowLeft') lightStep(-1);
+  if (e.key === 'ArrowRight') lightStep(1);
+});
+
+// Nav hamburger
+const hamburger = document.getElementById('nav-hamburger');
+const drawer = document.getElementById('nav-drawer');
+hamburger.addEventListener('click', () => {
+  const open = drawer.classList.toggle('open');
+  hamburger.classList.toggle('active', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeDrawer() {
+  drawer.classList.remove('open');
+  hamburger.classList.remove('active');
+  document.body.style.overflow = '';
+}
+</script>
+</body>
+</html>

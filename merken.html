@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merken – Kapsalon Het Kniphuys</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .merken-hero {
+      padding: 140px 0 60px;
+      background: var(--dark);
+      text-align: center;
+    }
+    .merken-hero .eyebrow { color: var(--beige-dark); }
+    .merken-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .merken-hero p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .merken-section {
+      background: var(--beige-light);
+      padding: 72px 0 88px;
+    }
+
+    .merken-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 0;
+    }
+
+    .merk-card {
+      background: var(--white);
+      border: 1px solid var(--beige-medium);
+      border-radius: 4px;
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: box-shadow .25s, border-color .25s;
+    }
+    .merk-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      border-color: var(--beige-dark);
+    }
+
+    .merk-card__label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .merk-card__name {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1;
+      margin: 0;
+    }
+
+    .merk-card__divider {
+      width: 40px;
+      height: 2px;
+      background: var(--primary);
+      border: none;
+      margin: 4px 0;
+    }
+
+    .merk-card__desc {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--text-light);
+      flex: 1;
+    }
+
+    .merk-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--beige-dark);
+      padding-bottom: 3px;
+      transition: color .2s, border-color .2s;
+      align-self: flex-start;
+    }
+    .merk-card__link:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .merk-card__link svg {
+      width: 14px; height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* SISKO card – accent */
+    .merk-card--sisko {
+      background: var(--dark);
+      border-color: var(--dark);
+      color: var(--white);
+    }
+    .merk-card--sisko .merk-card__name { color: var(--white); }
+    .merk-card--sisko .merk-card__desc { color: rgba(255,255,255,0.65); }
+    .merk-card--sisko .merk-card__link {
+      color: var(--beige-dark);
+      border-color: rgba(200,170,125,0.4);
+    }
+    .merk-card--sisko .merk-card__link:hover {
+      color: var(--white);
+      border-color: var(--white);
+    }
+    .merk-card--sisko .merk-card__label { color: var(--beige-dark); }
+
+    @media (max-width: 767px) {
+      .merken-grid { grid-template-columns: 1fr; gap: 16px; }
+      .merk-card { padding: 36px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav">
+  <div class="nav__wrap">
+    <a class="nav__logo" href="index.html">
+      <img src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/logo-kniphuys-gold2.png" alt="Kapsalon Het Kniphuys" />
+    </a>
+    <nav class="nav__links">
+      <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
+      <a href="index.html#over-ons">Over Ons</a>
+      <a href="index.html#team">Team</a>
+      <a href="galerij.html">Galerij</a>
+      <a href="merken.html" style="color:var(--primary)">Merken</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <a class="nav__phone" href="tel:0299675360">
+        <svg class="nav__phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l1.46-1.46a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        <span class="nav__phone-text">0299 675 360</span>
+      </a>
+      <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak</a>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav__drawer" id="nav-drawer">
+  <nav class="nav__drawer-links">
+    <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
+    <a href="index.html#over-ons" onclick="closeDrawer()">Over Ons</a>
+    <a href="index.html#team" onclick="closeDrawer()">Team</a>
+    <a href="galerij.html">Galerij</a>
+    <a href="merken.html">Merken</a>
+    <a href="index.html#contact" onclick="closeDrawer()">Contact</a>
+  </nav>
+  <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak Maken</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="merken-hero">
+  <div class="container">
+    <p class="eyebrow">Onze partners</p>
+    <h1>Merken</h1>
+    <p>Wij werken uitsluitend met professionele merken die passen bij onze kwaliteitsstandaard – voor het beste resultaat voor jouw haar.</p>
+  </div>
+</section>
+
+<!-- ═══ MERKEN GRID ═══ -->
+<section class="merken-section">
+  <div class="container">
+    <div class="merken-grid">
+
+      <!-- Davines -->
+      <div class="merk-card">
+        <span class="merk-card__label">Haarverzorging</span>
+        <h2 class="merk-card__name">Davines</h2>
+        <hr class="merk-card__divider" />
+        <p class="merk-card__desc">Davines is een Italiaans professioneel haarverzorgingsmerk dat duurzaamheid combineert met topprestaties. Hun producten zijn ontwikkeld voor professioneel gebruik in de salon en staan bekend om rijke ingrediënten en prachtige resultaten.</p>
+        <a class="merk-card__link" href="https://www.davines.com/nl/" target="_blank" rel="noopener">
+          Bezoek davines.com
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+      <!-- Wella -->
+      <div class="merk-card">
+        <span class="merk-card__label">Kleur &amp; Styling</span>
+        <h2 class="merk-card__name">Wella</h2>
+        <hr class="merk-card__divider" />
+        <p class="merk-card__desc">Wella Professionals is wereldwijd toonaangevend in professionele haarkleur en stylingproducten. Met decennia aan innovatie biedt Wella de kleurmiddelen en verzorgingslijnen die wij gebruiken voor langdurig en prachtig resultaat.</p>
+        <a class="merk-card__link" href="https://www.wella.com/nl-NL/" target="_blank" rel="noopener">
+          Bezoek wella.com
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+      <!-- LookX -->
+      <div class="merk-card">
+        <span class="merk-card__label">Make-up &amp; Huidverzorging</span>
+        <h2 class="merk-card__name">LookX</h2>
+        <hr class="merk-card__divider" />
+        <p class="merk-card__desc">LookX is een professioneel make-upmerk dat beauty en verzorging combineert. Naast een mooie finish biedt LookX ook huidverzorgende eigenschappen – ideaal voor onze bruidsstyling en speciale gelegenheden.</p>
+        <a class="merk-card__link" href="https://www.lookx.nl/" target="_blank" rel="noopener">
+          Bezoek lookx.nl
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+      <!-- SISKO Hair -->
+      <div class="merk-card merk-card--sisko">
+        <span class="merk-card__label">Natural Hairweaves</span>
+        <h2 class="merk-card__name">SISKO Hair</h2>
+        <hr class="merk-card__divider" />
+        <p class="merk-card__desc">SISKO Hair is ons eigen ontwikkelde merk voor natural hairweaves van topkwaliteit. Speciaal samengesteld voor een natuurlijk resultaat dat past bij jouw haar – vakkundig aangebracht door onze gecertificeerde stylisten.</p>
+        <a class="merk-card__link" href="https://siskohair.nl/" target="_blank" rel="noopener">
+          Bezoek siskohair.nl
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer__body">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__col--brand">
+          <img class="footer__brand-logo" src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/logo-kniphuys-gold2.png" alt="Kapsalon Het Kniphuys" />
+          <p class="footer__desc">Jouw kapper in De Rijp. Persoonlijke aandacht, vakmanschap en een warme sfeer – van klassieke knipbeurt tot geavanceerde hairweaves.</p>
+          <div class="footer__social">
+            <a class="footer__social-link" href="https://facebook.com/hetkniphuys" target="_blank" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a class="footer__social-link" href="https://instagram.com/hetkniphuys" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-heading">Menu</h3>
+          <nav class="footer__nav">
+            <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
+            <a href="index.html#over-ons">Over Ons</a>
+            <a href="index.html#team">Team</a>
+            <a href="galerij.html">Galerij</a>
+            <a href="merken.html">Merken</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="footer__col footer__col--partner">
+          <img class="footer__partner-logo" src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/anko-logo.png" alt="ANKO Sinds 1891" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="footer__anko-fallback" style="display:none">
+            <span class="footer__anko-crown">♛</span>
+            <span class="footer__anko-name">ANKO</span>
+            <span class="footer__anko-since">SINDS 1891</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <p><a href="https://forwardx.nl" target="_blank">Website laten maken?</a> ForwardX</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('nav-hamburger');
+const drawer = document.getElementById('nav-drawer');
+hamburger.addEventListener('click', () => {
+  const open = drawer.classList.toggle('open');
+  hamburger.classList.toggle('active', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeDrawer() {
+  drawer.classList.remove('open');
+  hamburger.classList.remove('active');
+  document.body.style.overflow = '';
+}
+</script>
+</body>
+</html>
