@@ -196,47 +196,41 @@ ul { list-style: none; }
 
 .behandeling-card:hover .behandeling-card__cta { opacity: 1; transform: translateY(0); }
 
-/* Endorsement tag — Irene Schouten */
-.endorsement-tag {
+/* Endorsement tag — Irene Schouten (in SISKO banner) */
+.sisko__endorsement {
   position: absolute;
-  top: 14px; right: 14px;
+  bottom: 28px; right: 32px;
   display: flex; flex-direction: column; align-items: flex-end;
-  background: rgba(12, 6, 2, 0.52);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 6px;
-  padding: 7px 11px 8px;
   z-index: 3;
   pointer-events: none;
   text-align: right;
 }
 .endorsement-tag__used {
   font-family: var(--font-body);
-  font-size: 8.5px;
+  font-size: 9px;
   font-weight: 500;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.45);
   line-height: 1;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 .endorsement-tag__name {
   font-family: var(--font-heading);
   font-style: italic;
-  font-size: 15px;
+  font-size: 22px;
   font-weight: 400;
-  color: rgba(255,255,255,0.92);
-  line-height: 1.15;
-  margin-bottom: 2px;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.1;
+  margin-bottom: 3px;
 }
 .endorsement-tag__title {
   font-family: var(--font-body);
-  font-size: 7.5px;
+  font-size: 8px;
   font-weight: 400;
-  letter-spacing: 0.3px;
-  color: rgba(255,255,255,0.42);
-  line-height: 1.3;
+  letter-spacing: 0.4px;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.4;
 }
 
 /* Mobile swipe */
