@@ -392,6 +392,52 @@ ul { list-style: none; }
 .faq-item.active .faq-item__answer { max-height: 400px; }
 .faq-item__answer p { padding: 0 0 20px; font-size: 14px; line-height: 1.8; color: var(--text); }
 
+/* ── CONTACT FORMULIER ── */
+.contact-section { background: #f7f2eb; padding: var(--sp) 0; }
+.contact-section__grid { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
+.contact-section__info { padding-top: 6px; }
+
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.contact-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact-form__field { display: flex; flex-direction: column; gap: 7px; }
+.contact-form__field label {
+  font-size: 10px; font-weight: 600; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--text-light);
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.10);
+  border-radius: 5px;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--dark);
+  transition: border-color .2s, box-shadow .2s;
+  width: 100%;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.contact-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(180,130,70,0.12);
+}
+.contact-form textarea { resize: vertical; min-height: 130px; }
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: rgba(0,0,0,0.32); }
+.hidden { display: none !important; }
+
 /* ── OPENINGSTIJDEN ── */
 .openingstijden { background: var(--dark); padding: var(--sp) 0; }
 .openingstijden__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -612,6 +658,8 @@ ul { list-style: none; }
   .sisko { min-height: 500px; }
   .sisko__inner { padding: 0 24px; }
   .sisko__content { padding: 56px 0; }
+  .contact-section__grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-form__row { grid-template-columns: 1fr; }
   .openingstijden__grid { grid-template-columns: 1fr; gap: 48px; }
   .reviews__grid { grid-template-columns: 1fr; }
   .usps__grid { grid-template-columns: 1fr 1fr; gap: 24px; }
