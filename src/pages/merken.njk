@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Merken – Kapsalon Het Kniphuys</title>
-  <link rel="stylesheet" href="style.css" />
+---
+layout: layouts/base.njk
+title: Merken
+permalink: /merken/
+extraStyles: |
   <style>
     .merken-hero {
       padding: 140px 0 60px;
@@ -135,46 +133,7 @@
       .merk-card { padding: 36px 28px; }
     }
   </style>
-</head>
-<body>
-
-<!-- ═══ NAV ═══ -->
-<header class="nav">
-  <div class="nav__wrap">
-    <a class="nav__logo" href="index.html">
-      <img src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/logo-kniphuys-gold2.png" alt="Kapsalon Het Kniphuys" />
-    </a>
-    <nav class="nav__links">
-      <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
-      <a href="index.html#over-ons">Over Ons</a>
-      <a href="index.html#team">Team</a>
-      <a href="galerij.html">Galerij</a>
-      <a href="merken.html" style="color:var(--primary)">Merken</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-    <div class="nav__right">
-      <a class="nav__phone" href="tel:0299675360">
-        <svg class="nav__phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l1.46-1.46a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-        <span class="nav__phone-text">0299 675 360</span>
-      </a>
-      <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak</a>
-      <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu openen">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-<div class="nav__drawer" id="nav-drawer">
-  <nav class="nav__drawer-links">
-    <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
-    <a href="index.html#over-ons" onclick="closeDrawer()">Over Ons</a>
-    <a href="index.html#team" onclick="closeDrawer()">Team</a>
-    <a href="galerij.html">Galerij</a>
-    <a href="merken.html">Merken</a>
-    <a href="index.html#contact" onclick="closeDrawer()">Contact</a>
-  </nav>
-  <a class="btn btn--primary" href="https://kniphuys.mijnsalon.nl/" target="_blank">Afspraak Maken</a>
-</div>
+---
 
 <!-- ═══ HERO ═══ -->
 <section class="merken-hero">
@@ -241,66 +200,3 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ FOOTER ═══ -->
-<footer class="footer">
-  <div class="footer__body">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__col footer__col--brand">
-          <img class="footer__brand-logo" src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/logo-kniphuys-gold2.png" alt="Kapsalon Het Kniphuys" />
-          <p class="footer__desc">Jouw kapper in De Rijp. Persoonlijke aandacht, vakmanschap en een warme sfeer – van klassieke knipbeurt tot geavanceerde hairweaves.</p>
-          <div class="footer__social">
-            <a class="footer__social-link" href="https://facebook.com/hetkniphuys" target="_blank" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-            </a>
-            <a class="footer__social-link" href="https://instagram.com/hetkniphuys" target="_blank" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer__col">
-          <h3 class="footer__col-heading">Menu</h3>
-          <nav class="footer__nav">
-            <a href="behandelingen.html">Behandelingen &amp; Prijzen</a>
-            <a href="index.html#over-ons">Over Ons</a>
-            <a href="index.html#team">Team</a>
-            <a href="galerij.html">Galerij</a>
-            <a href="merken.html">Merken</a>
-            <a href="index.html#contact">Contact</a>
-          </nav>
-        </div>
-        <div class="footer__col footer__col--partner">
-          <img class="footer__partner-logo" src="https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/anko-logo.png" alt="ANKO Sinds 1891" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-          <div class="footer__anko-fallback" style="display:none">
-            <span class="footer__anko-crown">♛</span>
-            <span class="footer__anko-name">ANKO</span>
-            <span class="footer__anko-since">SINDS 1891</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer__bottom">
-    <div class="container">
-      <p><a href="https://forwardx.nl" target="_blank">Website laten maken?</a> ForwardX</p>
-    </div>
-  </div>
-</footer>
-
-<script>
-const hamburger = document.getElementById('nav-hamburger');
-const drawer = document.getElementById('nav-drawer');
-hamburger.addEventListener('click', () => {
-  const open = drawer.classList.toggle('open');
-  hamburger.classList.toggle('active', open);
-  document.body.style.overflow = open ? 'hidden' : '';
-});
-function closeDrawer() {
-  drawer.classList.remove('open');
-  hamburger.classList.remove('active');
-  document.body.style.overflow = '';
-}
-</script>
-</body>
-</html>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+/* Google Fonts worden geladen via <link> tag in head.njk */
 
 :root {
   --primary: #7D6335;
@@ -120,8 +120,8 @@ ul { list-style: none; }
   transition: opacity 1.4s ease;
 }
 .hero__slide.active { opacity: 1; }
-.hero__slide--1 { background-image: url('hetkniphuys_1773902086_3856090950204760839_4028827833_1.jpg'); background-position: center center; }
-.hero__slide--2 { background-image: url('hero-team.jpg'); background-position: center 25%; }
+.hero__slide--1 { background-image: url('/assets/images/hetkniphuys_1773902086_3856090950204760839_4028827833_1.jpg'); background-position: center center; }
+.hero__slide--2 { background-image: url('/assets/images/hero-team.jpg'); background-position: center 25%; }
 .hero__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,10,2,0.80) 0%, rgba(20,10,2,0.35) 55%, rgba(20,10,2,0.05) 100%); }
 .hero__dots {
   position: absolute; bottom: 28px; right: 40px;
@@ -254,7 +254,7 @@ ul { list-style: none; }
 
 /* ── OVER ONS ── */
 .over-ons { display: grid; grid-template-columns: 50fr 50fr; min-height: 780px; }
-.over-ons__image { background-image: url('susan.webp'); background-size: cover; background-position: center 12%; }
+.over-ons__image { background-image: url('/assets/images/susan.webp'); background-size: cover; background-position: center 12%; }
 .over-ons__content { background: var(--beige-light); padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
 .over-ons__heading { font-family: var(--font-heading); font-size: clamp(34px, 3.5vw, 46px); font-weight: 600; color: var(--dark); line-height: 1.15; margin-bottom: 24px; }
 .over-ons__text { font-size: 15px; line-height: 1.85; color: var(--text); margin-bottom: 12px; }
@@ -271,7 +271,7 @@ ul { list-style: none; }
 
 .sisko__bg {
   position: absolute; inset: 0;
-  background-image: url('ireneschouten1_1742545866_3593057608081315026_50423180_1.jpg');
+  background-image: url('/assets/images/ireneschouten1_1742545866_3593057608081315026_50423180_1.jpg');
   background-size: 55% auto;
   background-position: right 15%;
   background-repeat: no-repeat;

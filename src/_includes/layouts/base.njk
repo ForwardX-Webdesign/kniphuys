@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="nl">
+{% include "partials/head.njk" %}
+<body>
+
+{% include "components/header.njk" %}
+
+{{ content | safe }}
+
+{% include "components/footer.njk" %}
+
+<script src="/assets/js/main.js"></script>
+{% if extraScripts %}{{ extraScripts | safe }}{% endif %}
+</body>
+</html>

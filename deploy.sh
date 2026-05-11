@@ -10,10 +10,11 @@ git add -A
 git commit -m "${1:-Update website}" --allow-empty
 git push origin main
 
-# Cloudflare Pages — preview/staging
-npx wrangler pages deploy . --project-name kniphuys --branch main
+# Eleventy build + Cloudflare Pages preview/staging
+npm run build
+npx wrangler pages deploy _site --project-name kniphuys --branch main
 
 echo ""
-echo "✅ Klaar!"
-echo "   Netlify productie : wordt auto-deployed via GitHub"
+echo "Klaar!"
+echo "   Netlify: auto-deploy via GitHub push"
 echo "   Cloudflare preview: https://kniphuys.pages.dev"

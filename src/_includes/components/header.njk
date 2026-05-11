@@ -1,0 +1,37 @@
+<!-- ═══ NAV ═══ -->
+<header class="nav">
+  <div class="nav__wrap">
+    <a class="nav__logo" href="/">
+      <img src="{{ site.logo_url }}" alt="Kapsalon Het Kniphuys" />
+    </a>
+    <nav class="nav__links">
+      <a href="/behandelingen/" {% if page.url == '/behandelingen/' %}style="color:var(--primary)"{% endif %}>Behandelingen &amp; Prijzen</a>
+      <a href="/#over-ons">Over Ons</a>
+      <a href="/#team">Team</a>
+      <a href="/galerij/" {% if page.url == '/galerij/' %}style="color:var(--primary)"{% endif %}>Galerij</a>
+      <a href="/merken/" {% if page.url == '/merken/' %}style="color:var(--primary)"{% endif %}>Merken</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <a class="nav__phone" href="tel:{{ site.contact.phone_href }}">
+        <svg class="nav__phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l1.46-1.46a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        <span class="nav__phone-text">{{ site.contact.phone }}</span>
+      </a>
+      <a class="btn btn--primary" href="{{ site.booking_url }}" target="_blank">Afspraak</a>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav__drawer" id="nav-drawer">
+  <nav class="nav__drawer-links">
+    <a href="/behandelingen/">Behandelingen &amp; Prijzen</a>
+    <a href="/#over-ons">Over Ons</a>
+    <a href="/#team">Team</a>
+    <a href="/galerij/">Galerij</a>
+    <a href="/merken/">Merken</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+  <a class="btn btn--primary" href="{{ site.booking_url }}" target="_blank">Afspraak Maken</a>
+</div>

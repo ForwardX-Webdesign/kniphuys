@@ -1,10 +1,14 @@
 # ─────────────────────────────────────────────
 # Netlify configuratie — Kapsalon Het Kniphuys
+# Eleventy build
 # ─────────────────────────────────────────────
 
 [build]
-  publish = "."
-  # Geen buildstap nodig — pure statische site
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "18"
 
 # Netlify Forms verwerkt automatisch alle formulieren
 # met het attribuut data-netlify="true"
@@ -19,29 +23,19 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
 
 [[headers]]
-  for = "/style.css"
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/assets/css/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
-  for = "/*.jpg"
+  for = "/assets/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
-
-[[headers]]
-  for = "/*.webp"
-  [headers.values]
-    Cache-Control = "public, max-age=2592000"
-
-[[headers]]
-  for = "/*.png"
-  [headers.values]
-    Cache-Control = "public, max-age=2592000"
-
-[[headers]]
-  for = "/*.jpeg"
-  [headers.values]
-    Cache-Control = "public, max-age=2592000"
+    Cache-Control = "public, max-age=604800"
 
 # ── Formulier notificaties ────────────────────
 # Stel in via Netlify dashboard → Forms → Notifications

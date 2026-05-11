@@ -1,0 +1,18 @@
+{
+  "name": "Kapsalon Het Kniphuys",
+  "url": "https://hetkniphuys.nl",
+  "description": "Jouw kapper in De Rijp. Persoonlijke aandacht, vakmanschap en een warme sfeer – van klassieke knipbeurt tot geavanceerde hairweaves.",
+  "contact": {
+    "phone": "0299 675 360",
+    "phone_href": "0299675360",
+    "email": "post@kniphuys.nl",
+    "address": "Tuingracht 3, 1483 AP De Rijp"
+  },
+  "social": {
+    "facebook": "hetkniphuys",
+    "instagram": "hetkniphuys"
+  },
+  "booking_url": "https://kniphuys.mijnsalon.nl/",
+  "logo_url": "https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/logo-kniphuys-gold2.png",
+  "anko_logo_url": "https://kniphuys.jouwsalonwebsite.nl/wp-content/uploads/2026/01/anko-logo.png"
+}
