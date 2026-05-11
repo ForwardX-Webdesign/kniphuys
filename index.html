@@ -161,7 +161,9 @@
       <span class="section-label">De mensen achter het kniphuys</span>
       <h2 class="section-heading section-heading--center">Ons team</h2>
     </div>
-    <div class="team__grid">
+    <div class="team__carousel-wrap">
+    <button class="team__nav team__nav--prev" onclick="teamCarouselNav(-1)" aria-label="Vorige">&#8249;</button>
+    <div class="team__grid" id="team-carousel">
       <div class="team-card" onclick="openTeamModal('susan')">
         <img class="team-card__img" src="susan.webp" alt="Susan" />
         <div class="team-card__body">
@@ -205,13 +207,15 @@
         </div>
       </div>
       <div class="team-card" onclick="openTeamModal('maddy')">
-        <img class="team-card__img" src="Maddy.jpeg" alt="Maddy" />
+        <img class="team-card__img team-card__img--zoom" src="Maddy.jpeg" alt="Maddy" />
         <div class="team-card__body">
           <p class="team-card__name">Maddy</p>
           <p class="team-card__role">SISKO Specialist</p>
         </div>
       </div>
     </div>
+    <button class="team__nav team__nav--next" onclick="teamCarouselNav(1)" aria-label="Volgende">&#8250;</button>
+    </div><!-- /team__carousel-wrap -->
   </div>
 </section>
 
@@ -601,6 +605,13 @@ function openTeamModal(key) {
 function closeTeamModal() {
   document.getElementById('team-modal-overlay').classList.remove('active');
   document.body.style.overflow = '';
+}
+
+function teamCarouselNav(dir) {
+  const track = document.getElementById('team-carousel');
+  const card  = track.querySelector('.team-card');
+  const gap   = 20;
+  track.scrollBy({ left: dir * (card.offsetWidth + gap), behavior: 'smooth' });
 }
 
 const modals = {

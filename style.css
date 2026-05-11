@@ -328,24 +328,68 @@ ul { list-style: none; }
 /* ── TEAM ── */
 .team { background: var(--beige-light); padding: var(--sp) 0; }
 .team__head { text-align: center; margin-bottom: 52px; }
-.team__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
-.team-card { background: var(--white); border-radius: 3px; overflow: hidden; text-align: center; cursor: pointer; transition: transform .25s, box-shadow .25s; }
-.team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(20,10,2,0.12); }
-.team-card__img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; display: block; }
+/* Carousel wrapper */
+.team__carousel-wrap { position: relative; }
+
+.team__grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  gap: 20px;
+  scroll-behavior: smooth;
+}
+.team__grid::-webkit-scrollbar { display: none; }
+
+/* Desktop: 4 cards zichtbaar */
+.team-card {
+  flex: 0 0 calc(25% - 15px);
+  scroll-snap-align: start;
+  background: var(--white); border-radius: 3px; overflow: hidden;
+  text-align: center; cursor: pointer;
+  transition: box-shadow .25s;
+}
+.team-card:hover { box-shadow: 0 12px 32px rgba(20,10,2,0.12); }
+
+/* Foto: ingezoomd zodat witruimte boven het hoofd wegvalt */
+.team-card__img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  object-position: center 15%;
+  transform: scale(1.12);
+  transform-origin: center 15%;
+  display: block;
+}
+.team-card__img--zoom {
+  transform: scale(1.28);
+  transform-origin: center 18%;
+}
+
 .team-card__body { padding: 20px 16px 24px; }
 .team-card__name { font-family: var(--font-heading); font-size: 26px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
 .team-card__role { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); margin-bottom: 6px; }
 .team-card__tag { font-size: 12px; color: var(--text-light); font-style: italic; }
 
+/* Nav-knoppen */
+.team__nav {
+  position: absolute; top: calc(50% - 36px); transform: translateY(-50%);
+  background: var(--white); border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 50%; width: 44px; height: 44px;
+  font-size: 22px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10); z-index: 5;
+  transition: background .2s, color .2s, border-color .2s;
+  color: var(--dark);
+}
+.team__nav:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
+.team__nav--prev { left: -22px; }
+.team__nav--next { right: -22px; }
+
+/* Mobile: 1 kaart per keer */
 @media (max-width: 768px) {
-  .team__grid {
-    display: flex; overflow-x: auto;
-    scroll-snap-type: x mandatory; scrollbar-width: none; gap: 12px;
-    padding: 0 24px 16px; margin: 0 -24px;
-  }
-  .team__grid::-webkit-scrollbar { display: none; }
-  .team-card { flex: 0 0 72vw; scroll-snap-align: start; }
+  .team__grid { gap: 12px; padding: 0 24px 16px; margin: 0 -24px; }
+  .team-card { flex: 0 0 72vw; }
+  .team__nav { display: none; }
 }
 
 /* ── USPS ── */
