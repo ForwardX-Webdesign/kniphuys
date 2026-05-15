@@ -272,9 +272,9 @@ ul { list-style: none; }
 
 .sisko__bg {
   position: absolute; inset: 0;
-  background-image: url('/assets/images/ireneschouten1_1742545866_3593057608081315026_50423180_1.jpg');
-  background-size: 55% auto;
-  background-position: right 15%;
+  background-image: url('/assets/images/siskohairweaves_1760021469_3739653587728119910_21672114872_1.jpg');
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   background-color: #140a02;
 }
