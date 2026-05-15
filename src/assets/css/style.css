@@ -728,8 +728,8 @@ ul { list-style: none; }
   .nav__phone-text { display: none; }
   .nav__wrap { padding: 0 24px; }
   .behandelingen__grid { max-width: none; }
-  .hero { height: 80vh; min-height: 480px; }
-  .hero__content { padding: 0 24px 40px; }
+  .hero { height: 100svh; min-height: 560px; padding-top: 72px; }
+  .hero__content { padding: 0 24px 48px; }
   .hero__h1 { font-size: 44px; }
   .hero__h2 { font-size: 26px; }
   .hero__buttons { flex-direction: column; }
