@@ -21,13 +21,6 @@ const teamData = {
     bio: 'Sjoukje brengt frisse energie en creatieve ideeën mee naar de salon. Na haar diploma met onderscheiding groeit ze snel uit tot een veelgevraagd teamlid met een eigen stijl.',
     tags: ['Knippen', 'Styling', 'Wenkbrauw shaping']
   },
-  senna: {
-    name: 'Senna',
-    role: 'Stylist',
-    img: '/assets/images/senna.png',
-    bio: 'Senna combineert technische precisie met creatief inzicht. Ze staat bekend om haar rustige aanpak en het vermogen om iedere klant op zijn gemak te stellen terwijl ze een prachtig resultaat neerzet.',
-    tags: ['Knippen & Styling', 'Kleur', 'SISKO Hairweaves']
-  },
   marcelle: {
     name: 'Marcelle',
     role: 'Stylist',
