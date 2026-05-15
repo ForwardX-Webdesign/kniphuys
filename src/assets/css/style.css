@@ -120,8 +120,9 @@ ul { list-style: none; }
   transition: opacity 1.4s ease;
 }
 .hero__slide.active { opacity: 1; }
-.hero__slide--1 { background-image: url('/assets/images/hetkniphuys_1773902086_3856090950204760839_4028827833_1.jpg'); background-position: center center; }
-.hero__slide--2 { background-image: url('/assets/images/hero-team.jpg'); background-position: center 25%; }
+.hero__slide--1 { background-image: url('/assets/images/foto-het-kniphuys-interieur.jpeg'); background-position: center center; }
+.hero__slide--2 { background-image: url('/assets/images/hetkniphuys_1773902086_3856090950204760839_4028827833_1.jpg'); background-position: center center; }
+.hero__slide--3 { background-image: url('/assets/images/hero-team.jpg'); background-position: center 25%; }
 .hero__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,10,2,0.80) 0%, rgba(20,10,2,0.35) 55%, rgba(20,10,2,0.05) 100%); }
 .hero__dots {
   position: absolute; bottom: 28px; right: 40px;
