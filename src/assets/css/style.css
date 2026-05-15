@@ -472,6 +472,10 @@ ul { list-style: none; }
 .contact-section { background: #f7f2eb; padding: var(--sp) 0; }
 .contact-section__grid { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
 .contact-section__info { padding-top: 6px; }
+/* Override locatie kleuren voor lichte achtergrond */
+.contact-section .locatie__item { color: var(--dark); }
+.contact-section .locatie__item a { color: var(--dark); }
+.contact-section .locatie__icon { color: var(--primary); }
 
 .contact-form { display: flex; flex-direction: column; gap: 18px; }
 .contact-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
