@@ -17,7 +17,7 @@ const teamData = {
   sjoukje: {
     name: 'Sjoukje',
     role: 'Topstylist & Co-Owner',
-    img: '/assets/images/sjoukje.webp',
+    img: '/assets/images/Sjoukje.png.jpeg',
     bio: 'Sjoukje brengt frisse energie en creatieve ideeën mee naar de salon. Na haar diploma met onderscheiding groeit ze snel uit tot een veelgevraagd teamlid met een eigen stijl.',
     tags: ['Knippen', 'Styling', 'Wenkbrauw shaping']
   },
