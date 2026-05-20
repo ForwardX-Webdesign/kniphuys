@@ -2,7 +2,7 @@
 const teamData = {
   susan: {
     name: 'Susan',
-    role: 'Salonmanager · Topstylist',
+    role: 'Gastvrouw & Co-Owner',
     img: '/assets/images/susan.webp',
     bio: 'Susan is het hart van de salon. Met meer dan 15 jaar ervaring is zij gespecialiseerd in kleurbehandelingen en SISKO Hairweaves. Haar scherpe oog voor detail en persoonlijke benadering maken haar tot een gewaardeerde topstylist.',
     tags: ['Kleur & Highlights', 'SISKO Hairweaves', 'Bruidskapsels', 'Adviesgesprekken']
@@ -16,7 +16,7 @@ const teamData = {
   },
   sjoukje: {
     name: 'Sjoukje',
-    role: 'Topstylist',
+    role: 'Topstylist & Co-Owner',
     img: '/assets/images/sjoukje.webp',
     bio: 'Sjoukje brengt frisse energie en creatieve ideeën mee naar de salon. Na haar diploma met onderscheiding groeit ze snel uit tot een veelgevraagd teamlid met een eigen stijl.',
     tags: ['Knippen', 'Styling', 'Wenkbrauw shaping']
