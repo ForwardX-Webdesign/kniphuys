@@ -272,9 +272,9 @@ ul { list-style: none; }
 
 .sisko__bg {
   position: absolute; inset: 0;
-  background-image: url('/assets/images/WhatsApp Image 2026-02-05 at 10.07.48.jpeg');
+  background-image: url('/assets/images/PHOTO-2026-06-01-15-34-14.jpg');
   background-size: cover;
-  background-position: center 30%;
+  background-position: 60% top;
   background-repeat: no-repeat;
   background-color: #140a02;
 }
