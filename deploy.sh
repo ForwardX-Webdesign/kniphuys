@@ -1,8 +1,8 @@
 #!/bin/bash
 # ─────────────────────────────────────────────────────────────
 # Deploy Kniphuys
-#   → GitHub push  → Netlify auto-deploy (productie)
-#   → Cloudflare Pages (preview/staging URL)
+#   → GitHub push
+#   → Netlify productie deploy (kniphuys.netlify.app)
 # Gebruik: ./deploy.sh "Commit message"
 # ─────────────────────────────────────────────────────────────
 
@@ -10,11 +10,9 @@ git add -A
 git commit -m "${1:-Update website}" --allow-empty
 git push origin main
 
-# Eleventy build + Cloudflare Pages preview/staging
-npm run build
-npx wrangler pages deploy _site --project-name kniphuys --branch main
+# Netlify productie deploy
+netlify deploy --build --prod
 
 echo ""
 echo "Klaar!"
-echo "   Netlify: auto-deploy via GitHub push"
-echo "   Cloudflare preview: https://kniphuys.pages.dev"
+echo "   Netlify: https://kniphuys.netlify.app"
