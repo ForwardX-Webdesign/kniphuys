@@ -3,7 +3,7 @@ const teamData = {
   susan: {
     name: 'Susan',
     role: 'Gastvrouw & Co-Owner',
-    img: '/assets/images/PHOTO-2026-05-29-17-04-03.jpg',
+    img: '/assets/images/PHOTO-2026-05-29-19-00-25.jpg',
     bio: 'Susan is samen met haar zus Sjoukje oprichtster van Het Kniphuys en SISKO Hair. Ze is het gastvrije gezicht van de salons en een vaste vraagbaak bij collega\'s. Met haar passie voor mooi en gezond haar geeft ze de klanten van de salons op maat gemaakt advies over kleuring, verzorging en SISKO hairweaves.',
     tags: ['Kleur & Highlights', 'SISKO Hairweaves', 'Advies op maat', 'Gastvrouw']
   },
@@ -45,7 +45,7 @@ const teamData = {
   sharon: {
     name: 'Sharon',
     role: 'Stylist',
-    img: '/assets/images/PHOTO-2026-05-29-19-00-25.jpg',
+    img: '/assets/images/PHOTO-2026-05-29-17-04-03.jpg',
     bio: 'Sharon werkt één dag per week bij Het Kniphuys en runt daarnaast haar eigen kinderopvangbedrijf. Met haar warme, zorgzame karakter en gezelligheid stelt ze klanten graag op hun gemak tijdens een kleur- of knipbehandeling.',
     tags: ['Knippen', 'Kleurbehandeling', 'Damesbehandelingen']
   }
