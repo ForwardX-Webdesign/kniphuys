@@ -272,21 +272,31 @@ ul { list-style: none; }
 
 .sisko__bg {
   position: absolute; inset: 0;
+  background-color: #140a02;
+}
+
+/* Photo pinned to right half, face visible next to content */
+.sisko__bg::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0;
+  width: 48%; height: 100%;
   background-image: url('/assets/images/PHOTO-2026-06-01-15-34-14.jpg');
   background-size: cover;
-  background-position: 60% top;
+  background-position: left top;
   background-repeat: no-repeat;
-  background-color: #140a02;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%);
+  mask-image: linear-gradient(to right, transparent 0%, black 18%);
 }
 
 .sisko__gradient {
   position: absolute; inset: 0;
   background: linear-gradient(
-    105deg,
-    rgba(20,10,2,0.96) 0%,
-    rgba(44,25,8,0.88) 35%,
-    rgba(80,50,20,0.55) 65%,
-    rgba(80,50,20,0.12) 100%
+    to right,
+    rgba(20,10,2,1.0) 0%,
+    rgba(20,10,2,0.92) 40%,
+    rgba(20,10,2,0.3) 58%,
+    rgba(20,10,2,0.0) 70%
   );
 }
 
