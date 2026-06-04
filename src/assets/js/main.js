@@ -9,7 +9,7 @@ const teamData = {
   },
   sanne: {
     name: 'Sanne',
-    role: 'Stylist',
+    role: 'Topstylist',
     img: '/assets/images/Sanne.jpeg',
     bio: 'Met haar grote en trouwe klantenkring is Sanne een echte alleskunner bij Het Kniphuys. Ze denkt graag in oplossingen en blijft zichzelf ontwikkelen in de nieuwste trends en technieken. Niet voor niets boeken veel klanten graag een afspraak bij Sanne. Deze bijna-moeder is daarnaast een echte verbinder binnen het team.',
     tags: ['Knippen & Styling', 'Blow Dry', 'Highlights', 'Damesbehandelingen']
@@ -23,7 +23,7 @@ const teamData = {
   },
   marcelle: {
     name: 'Marcelle',
-    role: 'Stylist',
+    role: 'Topstylist',
     img: '/assets/images/Marcelle.jpeg',
     bio: 'Marcelle is sinds 2008 een vertrouwd gezicht en gespecialiseerd in het knippen en föhnen van kort haar van dames en het knippen van herenkapsels. Veel klanten genieten tijdens de behandeling extra van haar ontspannende wasmassage — dat momentje wordt vaak erg gewaardeerd. Marcelle is betrokken, gezellig en sociaal en werkt met veel aandacht en precisie. Naast haar werk bij Het Kniphuys is ze als moeder van twee topsportende kinderen veel onderweg en geniet ze vol trots van hun prestaties.',
     tags: ['Kort Haar Knippen', 'Herenkapsels', 'Föhnen & Styling', 'Wasmassage']
